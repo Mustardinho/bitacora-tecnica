@@ -1,0 +1,17 @@
+name: Comprobar enlaces
+
+on:
+  schedule:
+    - cron: '0 8 1 * *'   # el día 1 de cada mes
+  workflow_dispatch:       # o a mano desde la pestaña Actions
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Comprobar enlaces rotos en los .md
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --no-progress --accept 200,206,429 './**/*.md'
+          fail: false
