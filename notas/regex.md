@@ -1,41 +1,28 @@
-# REGEX
+# REGEX - 50 exercuses
 
 **Via:** B 
 **Initial date:** 2026-08-25
-**Fuente:** regexone.com/lesson
-**Tiempo invertido:** X min
+**Fuente:** https://regexone.com - tested on https://regex101.com
+**Time spent:** 30 min
 
-| # | Patrón | Qué captura | Truco / por qué falla el ingenuo |
+| # | Pattern | What it matches | Gotcha |
 |---|---|---|---|
-| 1 | abc | Every string that starts with 'abc' |---|
-| 2 | \d | Every number between 0-9 |---|
-| 3 | \. | Every character |---|
-| 4 | [cmf] | Matching specific characters |---|
-| 5 | [^bog] | Excluding specific characters |---|
-| 6 | [^a-cx-z] | Excludes specific characters for a range of sequential characters |---|
-| 7 | z{3} | Matches the string that has a specific characters or set of charaters repeated x number of times |---|
-| 8 | aa+b*c+ | Matches the strings that has 2 'a', any amount of 'b' and at least 1 'c' |---|
-| 9 | \d+ files? found\? | The numbers and plurality of a string |---|
-| 10 | \d\.\s+abc | It matches character of spacing |---|
-| 11 | ^(file.+)\.pdf$ |---|---|
-| 12 |
-| 13 |
-| 14 |
-| 15 |
-| 16 |
-| 17 |
-| 18 |
-| 19 |
-| 20 |
+| 1 | `abc` | the literal text `abc` anywhere in the line | NOT "starts with" — that needs `^abc` |
+| 2 | `\d` | exactly one digit, 0-9 | one digit, not a number: `42` matches on the `4` |
+| 3 | `\.` | a literal dot | `.` = any char; `\.` = a real dot. Backslash removes the power |
+| 4 | `[cmf]` | one char, either c, m or f | inside `[ ]` most metachars lose meaning: `[.]` is a real dot |
+| 5 | `[^bog]` | one char that is NOT b, o or g | `^` means "not" only as the FIRST char inside `[ ]` |
+| 6 | `[^a-cx-z]` | one char outside a-c and x-z | still matches ONE char, not a whole word |
+| 7 | `z{3}` | exactly `zzz` | `{3}` applies to the token before it, not the whole pattern |
+| 8 | `aa+b*c+` | ≥2 a's, ≥0 b's, ≥1 c | `aa+` is at least TWO a's — `a` then `a+`. Not two |
+| 9 | `\d+ files? found\?` | e.g. `3 files found?` / `1 file found?` | `s?` optional s; `\?` literal `?` — unescaped `?` = optional |
+| 10 | `\d\.\s+abc` | digit, dot, ≥1 whitespace, then `abc` | `\s` = space, tab, newline. `\s+` collapses any amount |
+| 11 | `^(file.+)\.pdf$` | full line: `file…` + `.pdf`, capturing the name | anchors force whole-line; `( )` captures for reuse as `$1` |
 
-## Cómo lo aplico
+## How I apply it
 
 -
 
-## Dudas abiertas
+## Open questions
 
 -
-
-## Enlace a la práctica
-
-- Commit / repo:
