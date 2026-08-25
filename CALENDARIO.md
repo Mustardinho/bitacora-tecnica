@@ -8,7 +8,7 @@ Cada línea tiene una **fecha límite**, lo que hay que **saber** y lo **tangibl
 
 Sin clases todavía: **2 h/día**. Es la mayor ventana del año.
 
-- [ ] **31 ago** — Repo `bitacora-tecnica` creado, con README, estructura de notas y el plan versionado
+- [x] **31 ago** — Repo `bitacora-tecnica` creado, con README, estructura de notas y el plan versionado
 - [ ] **6 sep** — Learn Git Branching completo (todos los niveles) + 50 ejercicios de regex101 resueltos y guardados en `notas/regex.md`
 - [ ] **13 sep** — **Certificación Postman Student Expert obtenida** + colección pública de una API real documentada
 
