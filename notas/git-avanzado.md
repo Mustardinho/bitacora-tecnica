@@ -2,12 +2,13 @@
 
 **Via:** A
 **Initial date:** 2026-08-25
+**State:** On course
 **Fuente:** (https://learngitbranching.js.org/)
-**Tiempo invertido:** 60 min
+**Tiempo invertido:** -
 
 ## What did you learned
 
-### 026-08-25 - Intro sequence + relative refs
+### 2026-08-25 - Intro sequence + relative refs
 - A **branch is just a movable pointer to a commit**, it's not a copy of the files.
 - `HEAD` is the pointer to "where I am now". Normally it points to a branch but it can point to a commit.
 - **Relative refs:** `HEAD^` = one commit up.
@@ -17,6 +18,18 @@
 - **merge** creates a new commit with 2 parents.
 - **rebase** it replays a commit onto a new base, creating new commits with new hashes (LGB draws it as C3' if you rebase C3).
 - `git checkout <hash>` detaches HEAD, it will point straight to a commit instead of a branch.
+
+**Invested time: 60min**
+
+### 2026-08-26 - Ramping up + moving work around
+
+- **Relative refs.** When using the tilde ´~´ followed by a number, you move upwards as many times as the number specified from the pointed commit, where HEAD is.
+- **`git branch -f <branch> <somewhere>`** will force-move a branch to the commit specified without touching any commit.
+- **`reset` vs `revert`**: while reset treats the commit as it never existed, revert will share the changes in the branch to others, if you are in C3 and want
+    to undo changes, it will create a new commit down C3 called C2', meaning that is a copy-paste from the C2 commit.
+- **`git cherry-pick <commi1> <commit2> <...>`** will copy all the commits specified and will insert them under the current location.
+- **`rebase -i <branch>`** will copy the commits of the current location and will open up a UI window where you can set which commits want to paste and its order.
+    After selecting them and setting its positions they will be pasted under the selected branch.
 
 ## How can I apply it
 
